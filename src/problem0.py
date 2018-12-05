@@ -338,6 +338,7 @@ def problem0c(circle, n, window):
         -- There is a 0.5 second pause after each rg.Circle is drawn.
       Must  ** NOT close **   the window.
 
+
     Type hints:
       :type circle: rg.Circle
       :type n: int
