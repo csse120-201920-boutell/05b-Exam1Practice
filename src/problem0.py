@@ -9,8 +9,8 @@ These problems illustrate concepts that previous problems have not emphasized:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Matt Boutell.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import testing_helper
@@ -206,6 +206,14 @@ def problem0a(n):
     #        Simply try a few examples to convince yourself of this.
     #        ASK FOR HELP if you do not understand this hint.
     # -------------------------------------------------------------------------
+    # if sum_of_digits(n) % 2 == 1:
+    #     return True
+    # else:
+    #     return False
+    # or
+    return sum_of_digits(n) % 2 == 1
+
+
 
 
 def run_test_problem0b():
@@ -271,6 +279,12 @@ def problem0b(n):
     #    **  use (call) the   is_prime   function that is DEFINED ABOVE.
     ###########################################################################
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(n-1):
+        if is_prime(k+2):
+            count = count + 1
+    return count
+
 
 
 def run_test_problem0c():
@@ -338,6 +352,14 @@ def problem0c(circle, n, window):
     #   renders with a half-second pause after rendering.
     ###########################################################################
     # -------------------------------------------------------------------------
+    circle.attach_to(window)
+    x = circle.center.x + 2 * circle.radius
+    for k in range(n):
+        new_circle = rg.Circle(rg.Point(x, circle.center.y), circle.radius)
+        new_circle.attach_to(window)
+        x = x + 2 * circle.radius
+        window.render(0.5)
+
 
 
 ###############################################################################
